@@ -6,85 +6,37 @@
 
 <title>生徒会ICT講習会</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <style>
-:root{
-    --primary:#2563eb;
-    --primary-dark:#1e40af;
-    --bg:#f5f7fb;
-    --card:#ffffff;
-    --text:#1f2937;
-    --sub:#6b7280;
-    --border:#e5e7eb;
-}
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     margin:0;
-    font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
-    background:
-    radial-gradient(circle at top left,#dbeafe 0%,transparent 30%),
-    radial-gradient(circle at bottom right,#e0f2fe 0%,transparent 30%),
-    var(--bg);
-    color:var(--text);
+    font-family:sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
 }
 
 /* ヘッダー */
 
 header{
     background:white;
-    border-bottom:1px solid var(--border);
-    padding:20px 30px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(10px);
+    padding:20px;
+    border-bottom:1px solid #ddd;
 }
 
-.nav{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:1.5rem;
-    font-weight:700;
-}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-}
-
-.nav-links a{
-    text-decoration:none;
-    color:var(--sub);
-    font-weight:600;
-    transition:.2s;
-}
-
-.nav-links a:hover{
-    color:var(--primary);
+header h1{
+    margin:0;
+    text-align:center;
 }
 
 /* ヒーロー */
 
 .hero{
     background:
-    linear-gradient(rgba(10,20,60,.82),rgba(10,20,60,.9)),
+    linear-gradient(
+        rgba(20,30,70,.85),
+        rgba(20,30,70,.92)
+    ),
     url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop");
+
     background-size:cover;
     background-position:center;
 
@@ -93,215 +45,79 @@ header{
     padding:120px 20px;
 }
 
-.hero h1{
+.hero h2{
     font-size:3rem;
     margin-bottom:20px;
 }
 
 .hero p{
     opacity:.9;
-    font-size:1.1rem;
-    margin-bottom:35px;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.hero-btn{
-    display:inline-block;
-    padding:14px 28px;
-    border-radius:999px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.2s;
-}
-
-.hero-btn.primary{
-    background:var(--primary);
-    color:white;
-}
-
-.hero-btn.secondary{
-    border:1px solid rgba(255,255,255,.3);
-    color:white;
-}
-
-.hero-btn:hover{
-    transform:translateY(-2px);
 }
 
 /* コンテンツ */
 
-.section-container{
-    max-width:1000px;
-    margin:50px auto;
-    padding:0 20px;
-}
-
-/* アコーディオン */
-
-details{
-    background:var(--card);
-    border-radius:24px;
-    margin-bottom:24px;
-    overflow:hidden;
-    border:1px solid var(--border);
-    box-shadow:0 4px 20px rgba(0,0,0,.04);
-    transition:.3s;
-}
-
-details:hover{
-    transform:translateY(-2px);
-}
-
-summary{
-    list-style:none;
-    cursor:pointer;
-    padding:24px;
-    font-size:1.2rem;
-    font-weight:700;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-summary::-webkit-details-marker{
-    display:none;
-}
-
-summary::after{
-    content:"+";
-    font-size:1.5rem;
-    color:var(--primary);
-}
-
-details[open] summary::after{
-    content:"−";
-}
-
-.content{
-    padding:0 24px 24px;
-    color:var(--sub);
-    line-height:1.8;
-}
-
-/* クイズ */
-
-.quiz-area{
-    margin-top:24px;
-    background:#f8fbff;
-    border:1px solid #dbeafe;
-    border-radius:20px;
-    padding:20px;
-}
-
-.quiz-title{
-    display:inline-block;
-    margin-bottom:12px;
-    color:var(--primary);
-    font-weight:700;
-}
-
-.quiz-area p{
-    color:var(--text);
-}
-
-label{
-    display:block;
-    margin:10px 0;
-}
-
-/* ボタン */
-
-.btn-check{
-    margin-top:16px;
-    background:linear-gradient(
-    135deg,
-    var(--primary),
-    var(--primary-dark)
-    );
-
-    color:white;
-    border:none;
-    padding:12px 24px;
-    border-radius:999px;
-    cursor:pointer;
-    font-weight:700;
-    transition:.2s;
-}
-
-.btn-check:hover{
-    transform:scale(1.03);
-}
-
-/* リンク */
-
-.resource-link{
-    display:inline-block;
-    margin-top:10px;
-    padding:10px 16px;
-    border-radius:999px;
-    background:#eff6ff;
-    color:var(--primary);
-    text-decoration:none;
-    font-weight:600;
-    transition:.2s;
-}
-
-.resource-link:hover{
-    background:#dbeafe;
-}
-
-/* 結果 */
-
-.result-msg{
-    margin-top:12px;
-    font-weight:700;
-}
-
-/* フッター */
-
-footer{
-    margin-top:80px;
-    padding:40px 20px;
-    text-align:center;
-    color:var(--sub);
-    border-top:1px solid var(--border);
-    background:white;
-}
-
-footer p{
-    max-width:900px;
+.container{
+    max-width:1100px;
     margin:auto;
-    line-height:1.7;
+    padding:40px 20px;
 }
 
-/* レスポンシブ */
+/* カード */
 
-@media(max-width:768px){
+.lesson-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
 
-    .hero h1{
-        font-size:2rem;
-    }
+    gap:20px;
+}
 
-    .nav{
-        flex-direction:column;
-        gap:15px;
-    }
+.lesson-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    text-decoration:none;
+    color:inherit;
 
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+    border:1px solid #e5e7eb;
 
-    summary{
-        font-size:1rem;
-    }
+    transition:.25s;
 
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.04);
+}
+
+.lesson-card:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 10px 30px rgba(37,99,235,.15);
+}
+
+.lesson-number{
+    width:35px;
+    height:35px;
+
+    background:#dbeafe;
+    color:#2563eb;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+.lesson-card h3{
+    margin-top:0;
+}
+
+.lesson-card p{
+    color:#6b7280;
+    line-height:1.7;
 }
 </style>
 </head>
@@ -309,214 +125,73 @@ footer p{
 <body>
 
 <header>
-    <div class="nav">
-        <div class="logo">生徒会ICT講習会</div>
-
-        <div class="nav-links">
-            <a href="#">トップ</a>
-            <a href="#">講習一覧</a>
-            <a href="#">最終テスト</a>
-        </div>
-    </div>
+    <h1>2026年度 生徒会ICT講習会</h1>
 </header>
 
 <section class="hero">
-    <h1>2026年度 生徒会ICT講習会</h1>
+    <h2>ICT・情報モラル・生成AI</h2>
 
     <p>
-        Google Workspace・情報モラル・生成AIを学ぶ
+        生徒会活動で必要な
+        デジタルスキルを学ぶ
     </p>
-
-    <div class="hero-buttons">
-        <a href="#" class="hero-btn primary">
-            ▶ 講習動画を見る
-        </a>
-
-        <a href="#" class="hero-btn secondary">
-            最終確認テスト
-        </a>
-    </div>
 </section>
 
-<div class="section-container">
+<div class="container">
 
-    <details>
-        <summary>2. インターネットとは</summary>
+    <div class="lesson-grid">
 
-        <div class="content">
+        <a href="lessons/lesson01.html"
+        class="lesson-card">
 
-            <p>
-                インターネットの仕組みや、
-                SNS等のモラルについて学びます。
-            </p>
-
-            <div class="quiz-area">
-
-                <span class="quiz-title">
-                    📝 セクション確認テスト
-                </span>
-
-                <p>
-                    Q.SNS上に、生徒会の内部情報を
-                    上げても良い？
-                </p>
-
-                <label>
-                    <input type="radio" name="q1">
-                    良い
-                </label>
-
-                <label>
-                    <input type="radio" name="q1" class="correct">
-                    ダメ
-                </label>
-
-                <button class="btn-check"
-                onclick="checkAnswer(this)">
-                    採点する
-                </button>
-
-                <p class="result-msg"></p>
-
+            <div class="lesson-number">
+                01
             </div>
 
-        </div>
-    </details>
-
-    <details>
-        <summary>5. Google Workspace</summary>
-
-        <div class="content">
+            <h3>インターネットとは</h3>
 
             <p>
-                Drive・Document・Formsなどの
-                活用方法を学びます。
+                SNS・情報モラル・
+                公共Wi-Fiなどを学習
             </p>
 
-            <a href="https://support.google.com/docs/answer/6000292"
-            target="_blank"
-            class="resource-link">
+        </a>
 
-                🔗 Google公式サポート
+        <a href="lessons/lesson02.html"
+        class="lesson-card">
 
-            </a>
-
-            <div class="quiz-area">
-
-                <span class="quiz-title">
-                    📝 セクション確認テスト
-                </span>
-
-                <p>
-                    Q.アンケート集計に最も適した
-                    ツールは？
-                </p>
-
-                <label>
-                    <input type="radio" name="q5">
-                    ドキュメント
-                </label>
-
-                <label>
-                    <input type="radio" name="q5"
-                    class="correct">
-
-                    Google Forms
-                </label>
-
-                <button class="btn-check"
-                onclick="checkAnswer(this)">
-                    採点する
-                </button>
-
-                <p class="result-msg"></p>
-
+            <div class="lesson-number">
+                02
             </div>
 
-        </div>
-    </details>
-
-    <details>
-        <summary>8. 生成AIについて</summary>
-
-        <div class="content">
+            <h3>Google Workspace</h3>
 
             <p>
-                AIの原理と、
-                実際の活用方法を学びます。
+                Drive・Forms・
+                Spreadsheetを学ぶ
             </p>
 
-            <a href="https://chat.openai.com"
-            target="_blank"
-            class="resource-link">
+        </a>
 
-                🔗 ChatGPT
+        <a href="lessons/lesson03.html"
+        class="lesson-card">
 
-            </a>
+            <div class="lesson-number">
+                03
+            </div>
 
-            <a href="https://gemini.google.com"
-            target="_blank"
-            class="resource-link">
+            <h3>生成AIについて</h3>
 
-                🔗 Gemini
+            <p>
+                ChatGPTやGeminiの
+                活用方法を学習
+            </p>
 
-            </a>
+        </a>
 
-        </div>
-    </details>
+    </div>
 
 </div>
-
-<footer>
-
-    <p>
-        webサイトに関する著作権は私に帰属しており、
-        無断での複製や転載は禁止されています。
-    </p>
-
-    <br>
-
-    <p>
-        Copyright © Haruki.
-        All Rights Reserved.
-    </p>
-
-</footer>
-
-<script>
-function checkAnswer(button){
-
-    const parent = button.parentElement;
-
-    const selected =
-    parent.querySelector('input:checked');
-
-    const msg =
-    parent.querySelector('.result-msg');
-
-    if(!selected){
-        alert("回答を選択してください！");
-        return;
-    }
-
-    msg.style.display = 'block';
-
-    if(selected.classList.contains('correct')){
-
-        msg.innerHTML =
-        "✅ 正解！素晴らしいです。";
-
-        msg.style.color = "#16a34a";
-
-    }else{
-
-        msg.innerHTML =
-        "❌ 残念、考えてみよう";
-
-        msg.style.color = "#dc2626";
-    }
-}
-</script>
 
 </body>
 </html>
