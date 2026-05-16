@@ -1,64 +1,453 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ただいま調整中です | Coming Soon</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        .icon {
-            font-size: 64px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #7f8c8d;
-        }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 2s linear infinite;
-            margin: 30px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson04 Google workspace</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+header{
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.3rem;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.lesson-card{
+    background:white;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.05);
+}
+
+.lesson-tag{
+    display:inline-block;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:8px 14px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h1{
+    margin-top:0;
+    font-size:2.2rem;
+}
+
+.description{
+    color:#6b7280;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* セクション */
+
+.section{
+    margin-top:30px;
+    background:#f8fbff;
+    border:1px solid #dbeafe;
+    border-radius:22px;
+    padding:25px;
+}
+
+.section-title{
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+/* URL */
+
+.resource-link{
+    display:block;
+    text-decoration:none;
+    background:white;
+    border:1px solid #dbeafe;
+    padding:14px 18px;
+    border-radius:16px;
+    margin-bottom:12px;
+    color:#2563eb;
+    font-weight:600;
+    transition:.2s;
+}
+
+.resource-link:hover{
+    transform:translateY(-2px);
+    background:#eff6ff;
+}
+
+/* クイズ */
+
+.question{
+    margin-bottom:30px;
+    padding-bottom:20px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.question p{
+    font-weight:bold;
+}
+
+label{
+    display:block;
+    margin:10px 0;
+}
+
+button{
+    margin-top:20px;
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af
+    );
+
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:1rem;
+}
+
+.result{
+    margin-top:25px;
+    background:#eff6ff;
+    border-radius:18px;
+    padding:20px;
+    display:none;
+    font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="icon">🛠️</div>
-        <h1>ただいま調整中です</h1>
-        <p>
-            いつもご利用いただきありがとうございます。<br>
-            現在、より良いサービス提供のためメンテナンスを行っております。
+
+<header>
+    生徒会ICTのすゝめ
+</header>
+
+<div class="container">
+
+    <div class="lesson-card">
+
+        <div class="lesson-tag">
+            Lesson 04
+        </div>
+
+        <h1>
+            Googleworkspace
+        </h1>
+
+        <p class="description">
+
+            ドライブ、ドキュメント、スライド、シート、フォームの使い方を学ぶ
         </p>
-        <div class="loader"></div>
-        <p style="font-size: 0.9rem;">作業完了まで今しばらくお待ちください。</p>
+
+        <!-- 概要 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                📖 この授業の概要
+            </div>
+
+            <p>
+
+                この授業では、
+                生徒会活動で必要となる
+                ドライブ、ドキュメント、スライド、シート、フォームについて学習します。
+
+            </p>
+
+            <ul>
+
+                <li>
+                    Google drive
+                </li>
+
+                <li>
+                    Google ドキュメント
+                </li>
+
+                <li>
+                    Google スライド
+                </li>
+
+                <li>
+                    Google スプレッドシート
+                </li>
+                <li>
+                    Google forms
+                </li>    
+
+            </ul>
+
+        </div>
+
+        <!-- 関連URL -->
+
+        <div class="section">
+
+            <div class="section-title">
+                🔗 関連URL
+            </div>
+
+            <a class="resource-link"
+            href="https://www.drive.google.com/drive/my-drive"
+            target="_blank">
+
+                Google drive
+
+            </a>
+
+            <a class="resource-link"
+            href="https://support.google.com/docs/answer/6000292"
+            target="_blank">
+
+                Google 公式:スプレッドシートの使い方
+
+            </a>
+
+            <a class="resource-link"
+            href="https://sharp-pomelo-ff2.notion.site/34aa1d7d9f1180a78997d075fac5264e?v=34aa1d7d9f118069b981000c971e93c8&pvs=74"
+            target="_blank">
+
+                生徒会用:関数用語集
+
+            </a>
+
+        </div>
+
+        <!-- テスト -->
+
+        <div class="section">
+
+            <div class="section-title">
+                📝 理解度チェック
+            </div>
+
+            <!-- 問題1 -->
+
+            <div class="question">
+
+                <p>
+                    1. アンケート集計に最も適したツールは？
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q1"
+                    value="0">
+
+                    ドキュメント
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q1"
+                    value="1">
+
+                    Google forms
+                </label>
+
+            </div>
+
+            <!-- 問題2 -->
+
+            <div class="question">
+
+                <p>
+                    2. スプレッドシートで正しい、数式を選びなさい
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q2"
+                    value="1">
+
+                    =A1+A7
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q2"
+                    value="0">
+
+                    A1+A7=
+                </label>
+
+            </div>
+
+            <!-- 問題3 -->
+
+            <div class="question">
+
+                <p>
+                    3. スプレッドシートの名前を自動で出力させる関数は
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q3"
+                    value="1">
+
+                    Vlookup
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q3"
+                    value="0">
+
+                    sum
+                </label>
+
+            </div>
+
+            <!-- 問題4 -->
+
+            <div class="question">
+
+                <p>
+                    4. 全校生徒の前で発表する際に良いサービスは
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q4"
+                    value="1">
+
+                    Googleスライド
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q4"
+                    value="0">
+
+                    Google ドキュメント　
+                </label>
+
+            </div>
+
+            <!-- 問題5 -->
+
+            <div class="question">
+
+                <p>
+                    5. Googleサービスのデータを共有する際は、どのようにすれば良いか?(なお共有相手はGoogleアカウントを持っているものとする)
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q5"
+                    value="1">
+
+                    右上の共有を選択する。
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q5"
+                    value="0">
+
+                    左上のファイルを選択し、ダウンロード→PDFでダウンロード後データを送信する。
+                </label>
+
+            </div>
+
+            <button onclick="checkQuiz()">
+
+                採点する
+
+            </button>
+
+            <div class="result"
+            id="result"></div>
+
+        </div>
+
     </div>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+    let score = 0;
+
+    const questions = [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+    ];
+
+    questions.forEach(q => {
+
+        const selected =
+        document.querySelector(
+        `input[name="${q}"]:checked`
+        );
+
+        if(selected &&
+        selected.value === "1"){
+
+            score++;
+        }
+    });
+
+    const result =
+    document.getElementById("result");
+
+    result.style.display = "block";
+
+    if(score === 5){
+
+        result.innerHTML =
+        "🎉 5問正解！完璧です！";
+
+    }else if(score >= 3){
+
+        result.innerHTML =
+        `👍 ${score}/5問正解！よく理解できています！`;
+
+    }else{
+
+        result.innerHTML =
+        `📚 ${score}/5問正解！復習してみよう！`;
+    }
+}
+
+</script>
+
 </body>
 </html>
