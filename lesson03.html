@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson01 インターネットとは</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+
+header{
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+    padding:20px;
+    text-align:center;
+    font-weight:bold;
+    font-size:1.3rem;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.lesson-card{
+    background:white;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.05);
+}
+
+.lesson-tag{
+    display:inline-block;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:8px 14px;
+    border-radius:10px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h1{
+    margin-top:0;
+    font-size:2.2rem;
+}
+
+.description{
+    color:#6b7280;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* セクション */
+
+.section{
+    margin-top:30px;
+    background:#f8fbff;
+    border:1px solid #dbeafe;
+    border-radius:22px;
+    padding:25px;
+}
+
+.section-title{
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+/* URL */
+
+.resource-link{
+    display:block;
+    text-decoration:none;
+    background:white;
+    border:1px solid #dbeafe;
+    padding:14px 18px;
+    border-radius:16px;
+    margin-bottom:12px;
+    color:#2563eb;
+    font-weight:600;
+    transition:.2s;
+}
+
+.resource-link:hover{
+    transform:translateY(-2px);
+    background:#eff6ff;
+}
+
+/* クイズ */
+
+.question{
+    margin-bottom:30px;
+    padding-bottom:20px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.question:last-child{
+    border-bottom:none;
+}
+
+.question p{
+    font-weight:bold;
+}
+
+label{
+    display:block;
+    margin:10px 0;
+}
+
+button{
+    margin-top:20px;
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #1e40af
+    );
+
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:1rem;
+}
+
+.result{
+    margin-top:25px;
+    background:#eff6ff;
+    border-radius:18px;
+    padding:20px;
+    display:none;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    2026年度 生徒会ICT講習会
+</header>
+
+<div class="container">
+
+    <div class="lesson-card">
+
+        <div class="lesson-tag">
+            Lesson 01
+        </div>
+
+        <h1>
+            インターネットとは
+        </h1>
+
+        <p class="description">
+
+            インターネットの仕組みや、
+            SNSの情報モラル、
+            公共Wi-Fi利用時の注意点、
+            VPNなどについて学習します。
+
+        </p>
+
+        <!-- 概要 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                📖 この授業の概要
+            </div>
+
+            <p>
+
+                この授業では、
+                生徒会活動で必要となる
+                インターネット知識を学習します。
+
+            </p>
+
+            <ul>
+
+                <li>
+                    SNS利用時の注意点
+                </li>
+
+                <li>
+                    公共Wi-Fiの危険性
+                </li>
+
+                <li>
+                    VPNの役割
+                </li>
+
+                <li>
+                    情報漏洩対策
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- 関連URL -->
+
+        <div class="section">
+
+            <div class="section-title">
+                🔗 関連URL
+            </div>
+
+            <a class="resource-link"
+            href="https://support.google.com/"
+            target="_blank">
+
+                Google サポート
+
+            </a>
+
+            <a class="resource-link"
+            href="https://www.ipa.go.jp/"
+            target="_blank">
+
+                IPA 情報処理推進機構
+
+            </a>
+
+            <a class="resource-link"
+            href="https://www.nii.ac.jp/"
+            target="_blank">
+
+                国立情報学研究所
+
+            </a>
+
+        </div>
+
+        <!-- テスト -->
+
+        <div class="section">
+
+            <div class="section-title">
+                📝 理解度チェック
+            </div>
+
+            <!-- 問題1 -->
+
+            <div class="question">
+
+                <p>
+                    1. SNSに内部情報を
+                    投稿しても良い？
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q1"
+                    value="0">
+
+                    良い
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q1"
+                    value="1">
+
+                    ダメ
+                </label>
+
+            </div>
+
+            <!-- 問題2 -->
+
+            <div class="question">
+
+                <p>
+                    2. VPNを利用して
+                    公共Wi-Fiを使うのは？
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q2"
+                    value="1">
+
+                    良い
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q2"
+                    value="0">
+
+                    ダメ
+                </label>
+
+            </div>
+
+            <!-- 問題3 -->
+
+            <div class="question">
+
+                <p>
+                    3. 知らないWi-Fiに
+                    接続してよい？
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q3"
+                    value="0">
+
+                    良い
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q3"
+                    value="1">
+
+                    ダメ
+                </label>
+
+            </div>
+
+            <!-- 問題4 -->
+
+            <div class="question">
+
+                <p>
+                    4. パスワード共有は？
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q4"
+                    value="0">
+
+                    良い
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q4"
+                    value="1">
+
+                    ダメ
+                </label>
+
+            </div>
+
+            <!-- 問題5 -->
+
+            <div class="question">
+
+                <p>
+                    5. BeRealで
+                    PC画面を映した
+                    写真を投稿した
+                </p>
+
+                <label>
+                    <input type="radio"
+                    name="q5"
+                    value="0">
+
+                    良い
+                </label>
+
+                <label>
+                    <input type="radio"
+                    name="q5"
+                    value="1">
+
+                    悪い
+                </label>
+
+            </div>
+
+            <button onclick="checkQuiz()">
+
+                採点する
+
+            </button>
+
+            <div class="result"
+            id="result"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+function checkQuiz(){
+
+    let score = 0;
+
+    const questions = [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+    ];
+
+    questions.forEach(q => {
+
+        const selected =
+        document.querySelector(
+        `input[name="${q}"]:checked`
+        );
+
+        if(selected &&
+        selected.value === "1"){
+
+            score++;
+        }
+    });
+
+    const result =
+    document.getElementById("result");
+
+    result.style.display = "block";
+
+    if(score === 5){
+
+        result.innerHTML =
+        "🎉 5問正解！完璧です！";
+
+    }else if(score >= 3){
+
+        result.innerHTML =
+        `👍 ${score}/5問正解！よく理解できています！`;
+
+    }else{
+
+        result.innerHTML =
+        `📚 ${score}/5問正解！復習してみよう！`;
+    }
+}
+
+</script>
+
+</body>
+</html>
