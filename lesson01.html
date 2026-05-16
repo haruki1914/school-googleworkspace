@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>インターネットとは</title>
+
+<style>
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#f5f7fb;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.05);
+}
+
+.quiz{
+    margin-top:30px;
+    padding:20px;
+    background:#f8fbff;
+    border-radius:20px;
+}
+
+button{
+    margin-top:15px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:999px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>インターネットとは</h1>
+
+        <p>
+            SNSや情報モラル、
+            VPNなどについて学習します。
+        </p>
+
+        <div class="quiz">
+
+            <h3>確認テスト</h3>
+
+            <p>
+                SNS上に生徒会の
+                内部情報を上げても良い？
+            </p>
+
+            <label>
+                <input type="radio"
+                name="q1">
+
+                良い
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="radio"
+                name="q1"
+                class="correct">
+
+                ダメ
+            </label>
+
+            <br>
+
+            <button
+            onclick="checkAnswer()">
+
+                採点する
+
+            </button>
+
+            <p id="result"></p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function checkAnswer(){
+
+    const correct =
+    document.querySelector(".correct");
+
+    const result =
+    document.getElementById("result");
+
+    if(correct.checked){
+
+        result.innerHTML =
+        "✅ 正解！";
+
+        result.style.color =
+        "green";
+
+    }else{
+
+        result.innerHTML =
+        "❌ 不正解";
+
+        result.style.color =
+        "red";
+    }
+}
+</script>
+
+</body>
+</html>
