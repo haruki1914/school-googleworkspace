@@ -4,27 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>生徒会ICTのすゝめ</title>
+<title>生徒会ICT講習会</title>
 
 <style>
+
 body{
     margin:0;
-    font-family:sans-serif;
+    font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
     background:#f5f7fb;
     color:#1f2937;
-}
-
-/* ヘッダー */
-
-header{
-    background:white;
-    padding:20px;
-    border-bottom:1px solid #ddd;
-}
-
-header h1{
-    margin:0;
-    text-align:center;
 }
 
 /* ヒーロー */
@@ -32,8 +20,8 @@ header h1{
 .hero{
     background:
     linear-gradient(
-        rgba(20,30,70,.85),
-        rgba(20,30,70,.92)
+        rgba(20,30,70,.82),
+        rgba(20,30,70,.9)
     ),
     url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop");
 
@@ -42,65 +30,72 @@ header h1{
 
     color:white;
     text-align:center;
-    padding:120px 20px;
+    padding:140px 20px;
 }
 
-.hero h2{
-    font-size:3rem;
+.hero h1{
+    font-size:4rem;
     margin-bottom:20px;
 }
 
 .hero p{
+    font-size:1.2rem;
     opacity:.9;
 }
 
 /* コンテンツ */
 
 .container{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:40px 20px;
+    padding:60px 20px;
+}
+
+/* 3列 */
+
+.lesson-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
 }
 
 /* カード */
 
-.lesson-grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
 .lesson-card{
     background:white;
-    border-radius:20px;
-    padding:25px;
+    border-radius:28px;
+    padding:30px;
     text-decoration:none;
     color:inherit;
 
     border:1px solid #e5e7eb;
 
-    transition:.25s;
-
     box-shadow:
-    0 4px 20px rgba(0,0,0,.04);
+    0 4px 20px rgba(0,0,0,.05);
+
+    transition:.25s;
 }
 
 .lesson-card:hover{
     transform:translateY(-5px);
+
     box-shadow:
     0 10px 30px rgba(37,99,235,.15);
 }
 
+/* 番号 */
+
 .lesson-number{
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
+
+    border-radius:14px;
 
     background:#dbeafe;
     color:#2563eb;
-
-    border-radius:10px;
 
     display:flex;
     align-items:center;
@@ -108,47 +103,92 @@ header h1{
 
     font-weight:bold;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .lesson-card h3{
     margin-top:0;
+    font-size:1.6rem;
+    margin-bottom:14px;
 }
 
 .lesson-card p{
     color:#6b7280;
-    line-height:1.7;
+    line-height:1.8;
 }
+
+/* フッター */
+
+footer{
+    margin-top:60px;
+    padding:30px 20px;
+    text-align:center;
+    color:#9ca3af;
+    font-size:.8rem;
+    border-top:1px solid #e5e7eb;
+}
+
+/* スマホ */
+
+@media(max-width:900px){
+
+    .lesson-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .lesson-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>生徒会ICTすゝめ</h1>
-</header>
+<!-- ヒーロー -->
 
 <section class="hero">
-    <h2>ICT・情報モラル・生成AI</h2>
+
+    <h1>
+        ICT・情報モラル・生成AI
+    </h1>
 
     <p>
         生徒会活動で必要な
         デジタルスキルを学ぶ
     </p>
+
 </section>
+
+<!-- コンテンツ -->
 
 <div class="container">
 
     <div class="lesson-grid">
 
-        <a href="lesson01.html"
+        <!-- 01 -->
+
+        <a href="lessons/lesson01.html"
         class="lesson-card">
 
             <div class="lesson-number">
                 01
             </div>
 
-            <h3>インターネットとは</h3>
+            <h3>
+                インターネットとは
+            </h3>
 
             <p>
                 SNS・情報モラル・
@@ -157,6 +197,8 @@ header h1{
 
         </a>
 
+        <!-- 02 -->
+
         <a href="lessons/lesson02.html"
         class="lesson-card">
 
@@ -164,7 +206,9 @@ header h1{
                 02
             </div>
 
-            <h3>Google Workspace</h3>
+            <h3>
+                Google Workspace
+            </h3>
 
             <p>
                 Drive・Forms・
@@ -173,6 +217,8 @@ header h1{
 
         </a>
 
+        <!-- 03 -->
+
         <a href="lessons/lesson03.html"
         class="lesson-card">
 
@@ -180,7 +226,9 @@ header h1{
                 03
             </div>
 
-            <h3>生成AIについて</h3>
+            <h3>
+                生成AIについて
+            </h3>
 
             <p>
                 ChatGPTやGeminiの
@@ -188,20 +236,123 @@ header h1{
             </p>
 
         </a>
-        </a>
 
-        <a href="lessons/lesson03.html"
+        <!-- 04 -->
+
+        <a href="lessons/lesson04.html"
         class="lesson-card">
 
             <div class="lesson-number">
-                03
+                04
             </div>
 
-            <h3>生成AIについて</h3>
+            <h3>
+                ファイル形式
+            </h3>
 
             <p>
-                ChatGPTやGeminiの
-                活用方法を学習
+                PDF・JPEG・PNGなど
+                形式の違いを学ぶ
+            </p>
+
+        </a>
+
+        <!-- 05 -->
+
+        <a href="lessons/lesson05.html"
+        class="lesson-card">
+
+            <div class="lesson-number">
+                05
+            </div>
+
+            <h3>
+                Canva活用
+            </h3>
+
+            <p>
+                デザイン制作や
+                ポスター作成を学習
+            </p>
+
+        </a>
+
+        <!-- 06 -->
+
+        <a href="lessons/lesson06.html"
+        class="lesson-card">
+
+            <div class="lesson-number">
+                06
+            </div>
+
+            <h3>
+                PDF編集
+            </h3>
+
+            <p>
+                I Love PDFを使った
+                PDF編集方法を学ぶ
+            </p>
+
+        </a>
+
+        <!-- 07 -->
+
+        <a href="lessons/lesson07.html"
+        class="lesson-card">
+
+            <div class="lesson-number">
+                07
+            </div>
+
+            <h3>
+                セキュリティ
+            </h3>
+
+            <p>
+                パスワード管理や
+                情報漏洩対策を学習
+            </p>
+
+        </a>
+
+        <!-- 08 -->
+
+        <a href="lessons/lesson08.html"
+        class="lesson-card">
+
+            <div class="lesson-number">
+                08
+            </div>
+
+            <h3>
+                データ活用
+            </h3>
+
+            <p>
+                データ分析や
+                Spreadsheet活用
+            </p>
+
+        </a>
+
+        <!-- 09 -->
+
+        <a href="lessons/lesson09.html"
+        class="lesson-card">
+
+            <div class="lesson-number">
+                09
+            </div>
+
+            <h3>
+                最終確認テスト
+            </h3>
+
+            <p>
+                これまで学習した
+                内容の総復習
             </p>
 
         </a>
@@ -209,6 +360,20 @@ header h1{
     </div>
 
 </div>
+
+<!-- フッター -->
+
+<footer>
+
+    Copyright © Haruki All Rights Reserved.<br>
+
+    本Webサイトに関する著作権は
+    作成者に帰属します。<br>
+
+    無断転載・複製・再配布を
+    禁止します。
+
+</footer>
 
 </body>
 </html>
