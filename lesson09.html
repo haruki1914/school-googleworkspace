@@ -289,11 +289,11 @@ function checkQuiz() {
     if (score === totalPossible) {
         feedback = "🎉 満点です！完璧！";
     } else if (score >= 40) {
-        feedback = "👍 素晴らしい！高得点です！";
+        feedback = "👍 素晴らしい！補講免除です！";
     } else if (score >= 25) {
-        feedback = "📚 合格圏内です。復習も忘れずに！";
+        feedback = "📚 対面補講です。そのまま、表示しておきましょう！";
     } else {
-        feedback = "✍️ もう一度復習してみましょう。";
+        feedback = "✍️ もう一度資料を確認しましょう。";
     }
 
     result.innerHTML = `得点: ${score} / ${totalPossible} 点<br>${feedback}`;
