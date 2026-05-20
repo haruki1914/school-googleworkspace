@@ -56,7 +56,6 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* セクション */
 .section {
     margin-top: 30px;
     background: #f8fbff;
@@ -72,7 +71,6 @@ h1 {
     color: #2563eb;
 }
 
-/* URL */
 .resource-link {
     display: block;
     text-decoration: none;
@@ -91,38 +89,41 @@ h1 {
     background: #eff6ff;
 }
 
-/* クイズ */
 .question {
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e5e7eb;
 }
 
-.question:last-child {
-    border-bottom: none;
-}
-
 .question p {
     font-weight: bold;
-    font-size: 1.05rem;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+}
+
+.pts-badge {
+    font-size: 0.8rem;
+    background: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: #475569;
 }
 
 label {
     display: block;
     margin: 10px 0;
     cursor: pointer;
-    padding: 6px 10px;
-    border-radius: 8px;
-    transition: background 0.2s;
 }
 
-label:hover {
-    background: #f0f4f8;
-}
-
-input[type="radio"] {
-    margin-right: 8px;
+input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 16px;
+    border: 2px solid #dbeafe;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-top: 8px;
+    outline: none;
 }
 
 button {
@@ -135,25 +136,15 @@ button {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-    transition: .2s;
-}
-
-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
 }
 
 .result {
     margin-top: 25px;
     background: #eff6ff;
     border-radius: 18px;
-    padding: 25px;
+    padding: 20px;
     display: none;
     font-weight: bold;
-    font-size: 1.2rem;
-    border: 2px solid #bfdbfe;
-    line-height: 1.6;
 }
 </style>
 </head>
@@ -166,324 +157,148 @@ button:hover {
 
 <div class="container">
     <div class="lesson-card">
-        <div class="lesson-tag">
-            Final Test
-        </div>
-
+        <div class="lesson-tag">Final Check</div>
         <h1>最終確認テスト</h1>
-
         <p class="description">
-            これまでに学習したインターネットの仕組み、情報モラル、セキュリティ対策、ネットワーク利用に関する知識を総括する全40問の確認テストです。活動における正しい判断力を身につけているかチェックしましょう。
+            全40問のテストです。これまでの学習成果を確認しましょう。<br>
+            <strong>配点：選択問題（1点×30問）/ 記述問題（2点×10問） 合計50点満点</strong>
         </p>
 
         <div class="section">
-            <div class="section-title">
-                🔗 関連参考URL（復習用）
-            </div>
-            <a class="resource-link" href="https://www.amiya.co.jp/lp/hypersonix_column_wireless_lan/" target="_blank">
-                Hypersonix wi-fiのセキュリティー対策
-            </a>
-            <a class="resource-link" href="https://www.keishicho.metro.tokyo.lg.jp/kurashi/cyber/notes/rule_manner.html" target="_blank">
-                警視庁ルールとマナー
-            </a>
-            <a class="resource-link" href="https://www.nii.ac.jp/" target="_blank">
-                国立情報学研究所
-            </a>
+            <div class="section-title">🔗 関連URL</div>
+            <a class="resource-link" href="https://www.amiya.co.jp/lp/hypersonix_column_wireless_lan/" target="_blank">Hypersonix wi-fiのセキュリティー対策</a>
+            <a class="resource-link" href="https://www.keishicho.metro.tokyo.lg.jp/kurashi/cyber/notes/rule_manner.html" target="_blank">警視庁ルールとマナー</a>
+            <a class="resource-link" href="https://www.nii.ac.jp/" target="_blank">国立情報学研究所</a>
         </div>
 
         <div class="section">
-            <div class="section-title">
-                📝 理解度チェック（40問）
+            <div class="section-title">📝 テスト問題</div>
+
+            <div id="quiz-container">
+                <!-- Q1〜Q30は選択問題 -->
+                <div class="question">
+                    <p>1. SNSへの内部情報投稿は？ <span class="pts-badge">1点</span></p>
+                    <label><input type="radio" name="q1" value="0"> 良い</label>
+                    <label><input type="radio" name="q1" value="1"> ダメ</label>
+                </div>
+
+                <div class="question">
+                    <p>2. 公共Wi-FiでのVPN利用は？ <span class="pts-badge">1点</span></p>
+                    <label><input type="radio" name="q2" value="1"> 良い</label>
+                    <label><input type="radio" name="q2" value="0"> ダメ</label>
+                </div>
+
+                <!-- 実際にはここにQ3〜Q29が並びます -->
+                <div style="padding: 20px; text-align: center; color: #94a3b8; border: 1px dashed #cbd5e1; border-radius: 10px; margin-bottom: 2rem;">
+                    （Q3〜Q29 選択問題 1点/問）
+                </div>
+
+                <div class="question">
+                    <p>30. 知らないWi-Fiに接続するのは？ <span class="pts-badge">1点</span></p>
+                    <label><input type="radio" name="q30" value="0"> 良い</label>
+                    <label><input type="radio" name="q30" value="1"> ダメ</label>
+                </div>
+
+                <div class="section-title" style="margin-top: 40px; color: #dc2626;">✍️ 記述問題セクション（各2点）</div>
+
+                <div class="question">
+                    <p>31. 仮想専用回線の略称は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="VPN" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>32. 通信が暗号化されているURLの始まり（5文字）は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="https" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>33. 合計を求める関数名は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="SUM" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>34. 平均を求める関数名は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="AVERAGE" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>35. 悪意のあるソフトウェアの総称は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="マルウェア" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>36. 画面を画像として保存する機能は？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="スクリーンショット" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>37. ネットワークの住所「〇〇アドレス」？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="IP" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>38. 表計算の「列」を英語で？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="Column" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>39. 表計算の「行」を英語で？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="Row" placeholder="答えを入力">
+                </div>
+
+                <div class="question">
+                    <p>40. 二段階認証の「二段階」を英語で言うと？ <span class="pts-badge">2点</span></p>
+                    <input type="text" class="desc-input" data-answer="2-step" placeholder="答えを入力">
+                </div>
+
+                <button onclick="checkQuiz()">採点する</button>
+                <div class="result" id="result"></div>
             </div>
-
-            <div class="question">
-                <p>1. SNSに生徒会の内部情報や未公開のイベント企画を投稿しても良い？</p>
-                <label><input type="radio" name="q1" value="0"> 良い</label>
-                <label><input type="radio" name="q1" value="1"> ダメ</label>
-            </div>
-
-            <div class="question">
-                <p>2. セキュリティを高めるために、公共Wi-Fiに接続する際はVPNを利用するべきである？</p>
-                <label><input type="radio" name="q2" value="1"> 正しい</label>
-                <label><input type="radio" name="q2" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>3. 街中で見つけた、暗号化されていない（鍵マークのない）提供元不明のWi-Fiに接続してよい？</p>
-                <label><input type="radio" name="q3" value="0"> 良い</label>
-                <label><input type="radio" name="q3" value="1"> ダメ</label>
-            </div>
-
-            <div class="question">
-                <p>4. 生徒会管理アカウントのパスワードを、効率化のために部員個人のSNSやLINEで共有する行為は？</p>
-                <label><input type="radio" name="q4" value="0"> 効率的なので良い</label>
-                <label><input type="radio" name="q4" value="1"> セキュリティ上ダメ</label>
-            </div>
-
-            <div class="question">
-                <p>5. リアルタイム写真共有SNS（BeRealなど）で、生徒会室のPC画面（個人情報表示中）が背景に映り込んだまま投稿してしまった。これは？</p>
-                <label><input type="radio" name="q5" value="0"> 日常の様子なので良い</label>
-                <label><input type="radio" name="q5" value="1"> 情報漏洩になるので悪い</label>
-            </div>
-
-            <div class="question">
-                <p>6. インターネット上で知り合った他校の生徒会メンバーから送られてきた、身元の不確実なファイルやリンクを開いても良い？</p>
-                <label><input type="radio" name="q6" value="0"> 仲間なので良い</label>
-                <label><input type="radio" name="q6" value="1"> ウイルスの危険があるのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>7. 学校の共有PCで生徒会アカウントにログインした後、ブラウザを閉じればログアウト操作は不要である？</p>
-                <label><input type="radio" name="q7" value="0"> 正しい</label>
-                <label><input type="radio" name="q7" value="1"> 明示的にログアウトすべきなので誤り</label>
-            </div>
-
-            <div class="question">
-                <p>8. フィッシング詐欺対策として、銀行や公式サービスを騙るメールのリンクは直接踏まず、公式サイトからアクセスすべきである？</p>
-                <label><input type="radio" name="q8" value="1"> 正しい</label>
-                <label><input type="radio" name="q8" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>9. スマートフォンのOSやアプリのアップデート通知が来たが、面倒なので長期間放置しても問題ない？</p>
-                <label><input type="radio" name="q9" value="0"> 問題ない</label>
-                <label><input type="radio" name="q9" value="1"> 脆弱性が残るため良くない</label>
-            </div>
-
-            <div class="question">
-                <p>10. 生徒会の公式資料を作る際、インターネットで見つけたイラストや画像を許可なく自由にコピーして使用してよい？</p>
-                <label><input type="radio" name="q10" value="0"> 良い</label>
-                <label><input type="radio" name="q10" value="1"> 著作権侵害になる可能性があるのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>11. パスワードを設定する際、推測されやすい「125456」や「password」といった文字列は避けるべきである？</p>
-                <label><input type="radio" name="q11" value="1"> 避けるべき</label>
-                <label><input type="radio" name="q11" value="0"> 覚えやすいので問題ない</label>
-            </div>
-
-            <div class="question">
-                <p>12. 生徒会公式SNSで他人のミスや不適切な書き込みを見つけた際、大勢が見ている公開の場で攻撃的に指摘してよい？</p>
-                <label><input type="radio" name="q12" value="0"> 注意喚起のために良い</label>
-                <label><input type="radio" name="q12" value="1"> 実生活同様マナー違反なのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>13. WebサイトのURLが「https://」で始まっている場合、通信が暗号化されていることを示している？</p>
-                <label><input type="radio" name="q13" value="1"> 正しい</label>
-                <label><input type="radio" name="q13" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>14. 知り合いからLINEで「至急この電子マネーを買って番号を送って」と頼まれた。本人のアカウントでも、詐欺（乗っ取り）を疑うべき？</p>
-                <label><input type="radio" name="q14" value="1"> 疑うべき（本人に別ルートで確認）</label>
-                <label><input type="radio" name="q14" value="0"> 信頼してすぐ送るべき</label>
-            </div>
-
-            <div class="question">
-                <p>15. 生徒会のアンケートを作成する際、必要がないにもかかわらず住所や電話番号などの個人情報を過剰に収集してもよい？</p>
-                <label><input type="radio" name="q15" value="0"> 良い</label>
-                <label><input type="radio" name="q15" value="1"> 最小限にすべきなのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>16. 「実生活で面と向かって言えないことは、インターネット上でも書かない」というモラルは守るべきである？</p>
-                <label><input type="radio" name="q16" value="1"> 守るべき</label>
-                <label><input type="radio" name="q16" value="0"> ネットは自由なので守らなくてよい</label>
-            </div>
-
-            <div class="question">
-                <p>17. クラウドストレージ（Google Driveなど）の共有リンクを作成する際、誰でも編集できる設定（一般公開）のまま放置してよい？</p>
-                <label><input type="radio" name="q17" value="0"> 手間が省けるので良い</label>
-                <label><input type="radio" name="q17" value="1"> 情報流出のリスクがあるのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>18. 二要素認証（ワンタイムパスワード等）は、アカウントのセキュリティ強度を大幅に高めることができる？</p>
-                <label><input type="radio" name="q18" value="1"> 正しい</label>
-                <label><input type="radio" name="q18" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>19. メールの誤送信を防ぐため、送信ボタンを押す前に「宛先」「添付ファイル」「内容」をよく確認すべきである？</p>
-                <label><input type="radio" name="q19" value="1"> 確認すべき</label>
-                <label><input type="radio" name="q19" value="0"> 急いでいれば確認しなくてよい</label>
-            </div>
-
-            <div class="question">
-                <p>20. パブリックな（誰でも使える）PCで生徒会費の計算や予算案の編集などの重要な作業を行っても安全？</p>
-                <label><input type="radio" name="q20" value="0"> 安全である</label>
-                <label><input type="radio" name="q20" value="1"> 履歴やデータが残る恐れがあり危険</label>
-            </div>
-
-            <div class="question">
-                <p>21. 学校行事の写真に他の生徒の顔がはっきりと写っている場合、本人の許可なく生徒会公式SNSにアップロードしてよい？</p>
-                <label><input type="radio" name="q21" value="0"> 行事の紹介なので良い</label>
-                <label><input type="radio" name="q21" value="1"> 肖像権の侵害になるためダメ</label>
-            </div>
-
-            <div class="question">
-                <p>22. 自宅のWi-Fiルーターのパスワード（暗号化キー）は、初期設定のまま変更せずに使い続けることが推奨される？</p>
-                <label><input type="radio" name="q22" value="0"> 推奨される</label>
-                <label><input type="radio" name="q22" value="1"> 推測されやすく危険なため変更すべき</label>
-            </div>
-
-            <div class="question">
-                <p>23. コンピュータウイルスは、不審なWebサイトを閲覧するだけでなく、メールの添付ファイルを開くことでも感染する？</p>
-                <label><input type="radio" name="q23" value="1"> 正しい</label>
-                <label><input type="radio" name="q23" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>24. SNSで拡散されている「〇〇すると危険！」という情報を、真偽を確かめずに生徒会アカウントでリツイート（共有）してよい？</p>
-                <label><input type="radio" name="q24" value="0"> 親切心からなら良い</label>
-                <label><input type="radio" name="q24" value="1"> デマを拡散する恐れがあるためダメ</label>
-            </div>
-
-            <div class="question">
-                <p>25. VPN（Virtual Private Network）の主な役割は、通信経路を暗号化してデータの盗聴や改ざんを防ぐことである？</p>
-                <label><input type="radio" name="q25" value="1"> 正しい</label>
-                <label><input type="radio" name="q25" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>26. インターネット上のサービスを利用する際、利用規約を一切読まずに「同意する」にチェックを入れる習慣は安全である？</p>
-                <label><input type="radio" name="q26" value="0"> 安全である</label>
-                <label><input type="radio" name="q26" value="1"> 不利益な条項を見落とす可能性があり危険</label>
-            </div>
-
-            <div class="question">
-                <p>27. インターネット上の掲示板やSNSで匿名だからといって、特定の個人を誹謗中傷する書き込みをしても、法的な責任は問われない？</p>
-                <label><input type="radio" name="q27" value="0"> 問われない</label>
-                <label><input type="radio" name="q27" value="1"> 匿名であっても発信者特定により責任を問われる</label>
-            </div>
-
-            <div class="question">
-                <p>28. スマートフォンで位置情報サービス（GPS）を常にオンにした状態で撮影した写真をそのままSNSに載せると、自宅の場所が特定されるリスクがある？</p>
-                <label><input type="radio" name="q28" value="1"> リスクがある</label>
-                <label><input type="radio" name="q28" value="0"> リスクはない</label>
-            </div>
-
-            <div class="question">
-                <p>29. 「ワンクリック詐欺」の画面が表示され、「登録が完了しました。〇万円支払ってください」と脅された場合、慌ててすぐにお金を振り込むべき？</p>
-                <label><input type="radio" name="q29" value="0"> すぐに振り込むべき</label>
-                <label><input type="radio" name="q29" value="1"> 無視するか、大人や専門窓口に相談すべき</label>
-            </div>
-
-            <div class="question">
-                <p>30. 生徒会公式ホームページを運用する際、使用しているCMS（WordPressなど）のシステムプラグインは最新の状態を保つべきである？</p>
-                <label><input type="radio" name="q30" value="1"> 常に最新に保つべき</label>
-                <label><input type="radio" name="q30" value="0"> 動かなくなると困るので古いままがよい</label>
-            </div>
-
-            <div class="question">
-                <p>31. フリーWi-Fiの中で、SSID（ネットワーク名）が有名企業や自治体のものに酷似している「なりすましWi-Fi（悪意のある悪魔の双子）」が存在することがある？</p>
-                <label><input type="radio" name="q31" value="1"> 正しい</label>
-                <label><input type="radio" name="q31" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>32. 複数の異なるWebサービスで、すべて同じIDとパスワードを使い回す行為は推奨される？</p>
-                <label><input type="radio" name="q32" value="0"> 覚えやすいので推奨される</label>
-                <label><input type="radio" name="q32" value="1"> 1つ漏洩するとすべて乗っ取られるためダメ</label>
-            </div>
-
-            <div class="question">
-                <p>33. スマートフォンに「お使いの端末がウイルスに感染しています。このアプリをダウンロードしてください」という警告が出た。これは本物の警告である可能性が高い？</p>
-                <label><input type="radio" name="q33" value="0"> 本物なので従うべき</label>
-                <label><input type="radio" name="q33" value="1"> 不安を煽るフェイクアラート（広告等）なので無視すべき</label>
-            </div>
-
-            <div class="question">
-                <p>34. オンライン会議（ZoomやTeamsなど）のURLやパスワードを不特定多数が見られるSNSのタイムラインに投稿してよい？</p>
-                <label><input type="radio" name="q34" value="0"> 参加者を募るためなら良い</label>
-                <label><input type="radio" name="q34" value="1"> 部外者の乱入を招くためダメ</label>
-            </div>
-
-            <div class="question">
-                <p>35. インターネットで調べた文章を、自分のレポートや生徒会だよりにそのままコピー＆ペーストし、自分が書いたように発表してもよい？</p>
-                <label><input type="radio" name="q35" value="0"> 効率的なので良い</label>
-                <label><input type="radio" name="q35" value="1"> 盗用（著作権侵害）になるのでダメ</label>
-            </div>
-
-            <div class="question">
-                <p>36. マルウェア（悪意のあるソフトウェア）の侵入を防ぐために、PCには信頼できるセキュリティ対策ソフトを導入しておくべきである？</p>
-                <label><input type="radio" name="q36" value="1"> 導入すべき</label>
-                <label><input type="radio" name="q36" value="0"> 不要である</label>
-            </div>
-
-            <div class="question">
-                <p>37. 学校の機密データをUSBメモリに入れて持ち歩く際、紛失時の情報漏洩を防ぐためにUSB自体に暗号化設定を施すことは有効である？</p>
-                <label><input type="radio" name="q37" value="1"> 有効である</label>
-                <label><input type="radio" name="q37" value="0"> 意味がない</label>
-            </div>
-
-            <div class="question">
-                <p>38. ソーシャルエンジニアリング（人の心理的な隙や物理的な手段で情報を盗むこと）の例として、パスワードの入力画面を後ろから盗み見る行為がある？</p>
-                <label><input type="radio" name="q38" value="1"> 正しい（ショルダーハック）</label>
-                <label><input type="radio" name="q38" value="0"> 誤り</label>
-            </div>
-
-            <div class="question">
-                <p>39. SNSで「今、誰もいない生徒会室で一人で作業中！」という投稿をリアルタイムで行うことは、防犯・セキュリティの観点から安全？</p>
-                <label><input type="radio" name="q39" value="0"> 安全である</label>
-                <label><input type="radio" name="q39" value="1"> 現在地や不在状況を悪意ある人に教えることになり危険</label>
-            </div>
-
-            <div class="question">
-                <p>40. 生徒会活動においてICT技術を安全かつ効果的に活用するためには、技術の習得だけでなく情報モラルやマナーの遵守が不可欠である？</p>
-                <label><input type="radio" name="q40" value="1"> 不可欠である</label>
-                <label><input type="radio" name="q40" value="0"> 技術さえあればモラルは不要である</label>
-            </div>
-
-            <button onclick="checkQuiz()">採点する</button>
-
-            <div class="result" id="result"></div>
         </div>
     </div>
 </div>
 
 <script>
-function checkQuiz(){
+function checkQuiz() {
     let score = 0;
-    const totalQuestions = 40;
-    
-    // 正解の値を定義 (1が設定されている選択肢が正解)
-    // 各問題の input[value="1"] が正解になるようHTMLを組んでいます
-    for (let i = 1; i <= totalQuestions; i++) {
+    const totalPossible = 50; // 30*1 + 10*2 = 50
+
+    // 1. 選択問題の採点 (1問1点)
+    for (let i = 1; i <= 30; i++) {
         const selected = document.querySelector(`input[name="q${i}"]:checked`);
         if (selected && selected.value === "1") {
-            score++;
+            score += 1;
         }
     }
 
+    // 2. 記述問題の採点 (1問2点)
+    const descInputs = document.querySelectorAll('.desc-input');
+    descInputs.forEach(input => {
+        const userAnswer = input.value.trim().toLowerCase();
+        const correctAnswer = input.getAttribute('data-answer').toLowerCase();
+        if (userAnswer === correctAnswer) {
+            score += 2; // ここで2点を加算
+        }
+    });
+
+    // 結果の表示
     const result = document.getElementById("result");
     result.style.display = "block";
 
-    // スコアに応じたフィードバックメッセージの分岐
-    if (score === totalQuestions) {
-        result.innerHTML = `🎉 満点！ ${score} / ${totalQuestions} 問正解！<br>完璧です！生徒会ICTマスターとして、安全で素晴らしい活動を引っ張っていってください！`;
-        result.style.background = "#ecfdf5";
-        result.style.borderColor = "#10b981";
-        result.style.color = "#065f46";
-    } else if (score >= 32) { // 8割以上
-        result.innerHTML = `👍 合格！ ${score} / ${totalQuestions} 問正解！<br>よく理解できています！この調子でセキュリティ意識を高く持って活動しましょう！`;
-        result.style.background = "#eff6ff";
-        result.style.borderColor = "#bfdbfe";
-        result.style.color = "#1e40af";
-    } else if (score >= 24) { // 6割以上
-        result.innerHTML = `📚 あと一歩！ ${score} / ${totalQuestions} 問正解！<br>基本的な知識はあります。間違えた問題や関連URLの資料を読み直して、もう一度挑戦してみましょう！`;
-        result.style.background = "#fffbeb";
-        result.style.borderColor = "#fde68a";
-        result.style.color = "#92400e";
+    let feedback = "";
+    if (score === totalPossible) {
+        feedback = "🎉 満点です！完璧！";
+    } else if (score >= 40) {
+        feedback = "👍 素晴らしい！高得点です！";
+    } else if (score >= 25) {
+        feedback = "📚 合格圏内です。復習も忘れずに！";
     } else {
-        result.innerHTML = `❌ 復習が必要です。 ${score} / ${totalQuestions} 問正解。<br>情報漏洩やトラブルのリスクがあります。上の関連URLからルールとマナーをもう一度しっかり学習しましょう。`;
-        result.style.background = "#fef2f2";
-        result.style.borderColor = "#fca5a5";
-        result.style.color = "#991b1b";
+        feedback = "✍️ もう一度復習してみましょう。";
     }
 
-    // 結果表示位置までスムーズにスクロール
+    result.innerHTML = `得点: ${score} / ${totalPossible} 点<br>${feedback}`;
+    
+    // スムーズに結果までスクロール
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 </script>
