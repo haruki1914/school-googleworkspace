@@ -452,12 +452,12 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     // --- 【Lesson09】 (将来用) の点数自動入力 ---
     // 今後 Lesson09 側で "final_exam_score" というCookieを保存するようにすれば自動連動します
-    const lesson02Score = getCookie('final_exam_score');
-    if (lesson02Score !== null) {
+    const lesson09Score = getCookie('final_exam_score');
+    if (lesson09Score !== null) {
         const badge = document.getElementById('badge-lesson09');
         const scoreSpan = document.getElementById('final_exam_score');
         if (badge && scoreSpan) {
-            scoreSpan.innerText = lesson02Score;
+            scoreSpan.innerText = lesson09Score;
             badge.style.display = 'block';
         }
     }
