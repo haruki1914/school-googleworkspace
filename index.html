@@ -77,6 +77,7 @@ body{
     0 4px 20px rgba(0,0,0,.05);
 
     transition:.25s;
+    position: relative; /* バッジ位置調整用 */
 }
 
 .lesson-card:hover{
@@ -106,6 +107,20 @@ body{
     margin-bottom:18px;
 }
 
+/* 点数バッジのデザイン */
+.score-badge {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: #10b981;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: none; /* デフォルトは非表示、CookieがあればJSで表示 */
+}
+
 .lesson-card h3{
     margin-top:0;
     font-size:1.6rem;
@@ -115,6 +130,36 @@ body{
 .lesson-card p{
     color:#6b7280;
     line-height:1.8;
+}
+
+/* 関連サイトのコンテナ簡易調整 */
+.section-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+details {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.content {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.content a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* フッター */
@@ -156,8 +201,6 @@ footer{
 
 <body>
 
-<!-- ヒーロー -->
-
 <section class="hero">
 
     <h1>
@@ -171,13 +214,9 @@ footer{
 
 </section>
 
-<!-- コンテンツ -->
-
 <div class="container">
 
     <div class="lesson-grid">
-
-        <!-- 01 -->
 
         <a href="lesson01.html"
         class="lesson-card">
@@ -185,6 +224,8 @@ footer{
             <div class="lesson-number">
                 01
             </div>
+            
+            <div class="score-badge" id="badge-lesson01">前回の得点: <span id="score-lesson01">0</span>点</div>
 
             <h3>
                 インターネットとは
@@ -196,14 +237,14 @@ footer{
 
         </a>
 
-        <!-- 02 -->
-
         <a href="lesson02.html"
         class="lesson-card">
 
             <div class="lesson-number">
                 02
             </div>
+            
+            <div class="score-badge" id="badge-lesson02">前回の得点: <span id="score-lesson02">0</span>点</div>
 
             <h3>
                 ファイル形式・ケーブルなど
@@ -214,8 +255,6 @@ footer{
             </p>
 
         </a>
-
-        <!-- 03 -->
 
         <a href="setup.html"
         class="lesson-card">
@@ -234,9 +273,7 @@ footer{
 
         </a>
 
-        <!-- 04 -->
-
-        <a href="lesson04"
+        <a href="lesson04.html"
         class="lesson-card">
 
             <div class="lesson-number">
@@ -252,8 +289,6 @@ footer{
             </p>
 
         </a>
-
-        <!-- 05 -->
 
         <a href="setup.html"
         class="lesson-card">
@@ -273,8 +308,6 @@ footer{
 
         </a>
 
-        <!-- 06 -->
-
         <a href="setup.html"
         class="lesson-card">
 
@@ -291,8 +324,6 @@ footer{
             </p>
 
         </a>
-
-        <!-- 07 -->
 
         <a href="setup.html"
         class="lesson-card">
@@ -311,8 +342,6 @@ footer{
 
         </a>
 
-        <!-- 08 -->
-
         <a href="setup.html"
         class="lesson-card">
 
@@ -330,21 +359,21 @@ footer{
 
         </a>
 
-        <!-- 09 -->
-
         <a href="setup.html"
         class="lesson-card">
 
             <div class="lesson-number">
                 09
             </div>
+            
+            <div class="score-badge" id="badge-final_exam" style="background: #2563eb;">完了</div>
 
             <h3>
                 最終確認テスト
             </h3>
 
             <p>
-                全ての章の内容を理解できたか、最後に振り返りましょう！確認テスト点以上を目指しましょう。(点数に達するまで何度でも可能)
+                全ての章の内容を理解できたか、最後に振り返りましょう！確認テストで<strong>4点</strong>以上を目指しましょう。(点数に達するまで何度でも可能)
             </p>
 
         </a>
@@ -352,30 +381,27 @@ footer{
     </div>
 
 </div>
-	<div class="section-container">
+
+<div class="section-container">
     <details>
        
         <summary>　 関連サイト&amp;添付ファイルについて</summary>
         <div class="content">
-        	<a href="https://drive.google.com/drive/my-drive"> 🔗 Google drive</a>
-		<p></p>
-		<a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 PowerPoint資料</a>
-		<p></p>
-		<a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 講義ノート</a>
-		<p></p>
-		<a href="https://support.google.com/?hl=ja"> 🔗 Googleサポート</a>
-		<p></p>
-		<a href="https://www.nii.ac.jp/"> 🔗 国立情報学研究所</a>
-		<p></p>
-		<a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 印刷物</a>
-		<p></p>
-
-           
+            <a href="https://drive.google.com/drive/my-drive"> 🔗 Google drive</a>
+            <p></p>
+            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 PowerPoint資料</a>
+            <p></p>
+            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 講義ノート</a>
+            <p></p>
+            <a href="https://support.google.com/?hl=ja"> 🔗 Googleサポート</a>
+            <p></p>
+            <a href="https://www.nii.ac.jp/"> 🔗 国立情報学研究所</a>
+            <p></p>
+            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 印刷物</a>
+            <p></p>
         </div>
     </details>
-	</div>
-
-<!-- フッター -->
+</div>
 
 <footer>
 
@@ -389,6 +415,51 @@ footer{
 
 </footer>
 
+<script>
+// ページが読み込まれた時にCookieをチェックして点数を反映する
+window.addEventListener('DOMContentLoaded', () => {
+    
+    // Cookieの値を取得する共通関数
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    // --- 【Lesson01】 の点数自動入力 ---
+    // 前回のやり取りで設定したCookie名 "lesson01_score" を探します
+    const lesson01Score = getCookie('lesson01_score');
+    if (lesson01Score !== null) {
+        const badge = document.getElementById('badge-lesson01');
+        const scoreSpan = document.getElementById('score-lesson01');
+        if (badge && scoreSpan) {
+            scoreSpan.innerText = lesson01Score; // 点数を書き換え
+            badge.style.display = 'block';       // バッジを表示状態にする
+        }
+    }
+
+    // --- 【Lesson02】 (将来用) の点数自動入力 ---
+    // 今後 Lesson02 側で "lesson02_score" というCookieを保存するようにすれば自動連動します
+    const lesson02Score = getCookie('lesson02_score');
+    if (lesson02Score !== null) {
+        const badge = document.getElementById('badge-lesson02');
+        const scoreSpan = document.getElementById('score-lesson02');
+        if (badge && scoreSpan) {
+            scoreSpan.innerText = lesson02Score;
+            badge.style.display = 'block';
+        }
+    }
+
+    // --- 【最終テスト】 (将来用) の完了表示 ---
+    // 最終テスト合格時に "final_exam_status" などのCookieを保存すれば「完了」バッジが出ます
+    const finalStatus = getCookie('final_exam_status');
+    if (finalStatus !== null) {
+        const badge = document.getElementById('badge-final_exam');
+        if (badge) badge.style.display = 'block';
+    }
+});
+</script>
 
 </body>
 </html>
