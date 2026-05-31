@@ -175,7 +175,6 @@ button {
             <div class="section-title">📝 テスト問題</div>
 
             <div id="quiz-container">
-                <!-- Q1〜Q30は選択問題 -->
                 <div class="question">
                     <p>1. SNSへの内部情報投稿は？ <span class="pts-badge">1点</span></p>
                     <label><input type="radio" name="q1" value="0"> 良い</label>
@@ -188,7 +187,6 @@ button {
                     <label><input type="radio" name="q2" value="0"> ダメ</label>
                 </div>
 
-                <!-- 実際にはここにQ3〜Q29が並びます -->
                 <div style="padding: 20px; text-align: center; color: #94a3b8; border: 1px dashed #cbd5e1; border-radius: 10px; margin-bottom: 2rem;">
                     （Q3〜Q29 選択問題 1点/問）
                 </div>
@@ -252,6 +250,7 @@ button {
                 </div>
 
                 <button onclick="checkQuiz()">採点する</button>
+                <a href="index.html" id="back-home-link" style="font-size: 1.1rem; font-weight: bold; margin-left: 20px; text-decoration: none; color: #2563eb; display: none;">ホームに戻る</a>
                 <div class="result" id="result"></div>
             </div>
         </div>
@@ -281,23 +280,47 @@ function checkQuiz() {
         }
     });
 
+    // --- Cookieに最終確認テストの結果を保存する処理を追加 ---
+    const daysToExpire = 30; // 30日間保存
+    const date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+
+    // 得点のCookie保存
+    document.cookie = `final_exam_score=${score}; ${expires}; path=/; SameSite=Lax`;
+
+    // 40点以上で合格（補講免除）の場合、一覧画面と連動する「完了」用Cookieを付与する
+    if (score >= 40) {
+        document.cookie = `final_exam_status=passed; ${expires}; path=/; SameSite=Lax`;
+    } else {
+        // 不合格で再挑戦した場合など、過去の合格ステータスをリセットしたい場合は削除処理を走らせる
+        document.cookie = `final_exam_status=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax`;
+    }
+    // ----------------------------------------------------
+
     // 結果の表示
     const result = document.getElementById("result");
     result.style.display = "block";
 
     let feedback = "";
+    let saveMessage = " (スコアを記録しました)";
+
     if (score === totalPossible) {
-        feedback = "🎉 満点です！完璧！";
+        feedback = "🎉 満点です！完璧！" + saveMessage;
     } else if (score >= 40) {
-        feedback = "👍 素晴らしい！補講免除です！";
+        feedback = "👍 素晴らしい！補講免除です！" + saveMessage;
     } else if (score >= 25) {
-        feedback = "📚 対面補講です。そのまま、表示しておきましょう！";
+        feedback = "📚 対面補講です。そのまま、表示しておきましょう！" + saveMessage;
     } else {
-        feedback = "✍️ もう一度資料を確認しましょう。";
+        feedback = "✍️ もう一度資料を確認しましょう。" + saveMessage;
     }
 
     result.innerHTML = `得点: ${score} / ${totalPossible} 点<br>${feedback}`;
     
+    // 採点後にポータル画面へ戻りやすくするため「ホームに戻る」ボタンを出現させる
+    const homeLink = document.getElementById("back-home-link");
+    if (homeLink) homeLink.style.display = "inline-block";
+
     // スムーズに結果までスクロール
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
