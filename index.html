@@ -450,6 +450,17 @@ window.addEventListener('DOMContentLoaded', () => {
             badge.style.display = 'block';
         }
     }
+    // --- 【Lesson09】 (将来用) の点数自動入力 ---
+    // 今後 Lesson09 側で "final_exam_score" というCookieを保存するようにすれば自動連動します
+    const lesson02Score = getCookie('final_exam_score');
+    if (lesson02Score !== null) {
+        const badge = document.getElementById('badge-lesson09');
+        const scoreSpan = document.getElementById('final_exam_score');
+        if (badge && scoreSpan) {
+            scoreSpan.innerText = lesson02Score;
+            badge.style.display = 'block';
+        }
+    }
 
     // --- 【最終テスト】 (将来用) の完了表示 ---
     // 最終テスト合格時に "final_exam_status" などのCookieを保存すれば「完了」バッジが出ます
