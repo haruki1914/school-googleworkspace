@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lesson02 ファイル形式・</title>
+<title>Lesson02 ファイル形式・ケーブルなど</title>
 
 <style>
 
@@ -165,12 +165,8 @@ button{
         </h1>
 
         <p class="description">
-
             PDF/JPEGの使い分けや、プロジェクター接続（HDMI）について学ぶ
-
         </p>
-
-        <!-- 概要 -->
 
         <div class="section">
 
@@ -179,35 +175,16 @@ button{
             </div>
 
             <p>
-
-                この授業では、
-                各状況におけるファイル形式の使い分けとケーブルについて学びます。
-
+                この授業では、各状況におけるファイル形式の使い分けとケーブルについて学びます。
             </p>
 
             <ul>
-
-                <li>
-                    TPOに合わせたファイル
-                </li>
-                
-                <li>
-                    パソコンとつながるケーブル
-                </li>
-
-                <li>
-                    映像を入出力するケーブル
-                </li>
-
-                <li>
-                    VPNの役割
-                </li>
-
+                <li>TPOに合わせたファイル</li>
+                <li>パソコンとつながるケーブル</li>
+                <li>映像を入出力するケーブル</li>
             </ul>
 
         </div>
-
-        <!-- 関連URL -->
 
         <div class="section">
 
@@ -215,18 +192,11 @@ button{
                 🔗 関連URL
             </div>
 
-            <a class="resource-link"
-            href="https://support.google.com/"
-            target="_blank">
-
+            <a class="resource-link" href="https://support.google.com/" target="_blank">
                 Google サポート
-
             </a>
 
-
         </div>
-
-        <!-- テスト -->
 
         <div class="section">
 
@@ -234,119 +204,33 @@ button{
                 📝 理解度チェック
             </div>
 
-            <!-- 問題1 -->
-
             <div class="question">
-
-                <p>
-                    1. 拡大しても文字がぼやけにくく、印刷に適した文書形式は？
-                </p>
-
-                <label>
-                    <input type="radio"
-                    name="q1"
-                    value="1">
-
-                    PDF
-                </label>
-
-                <label>
-                    <input type="radio"
-                    name="q1"
-                    value="0">
-
-                    JPEG
-                </label>
-
+                <p>1. 拡大しても文字がぼやけにくく、印刷に適した文書形式は？</p>
+                <label><input type="radio" name="q1" value="1"> PDF</label>
+                <label><input type="radio" name="q1" value="0"> JPEG</label>
             </div>
 
-            <!-- 問題2 -->
-
             <div class="question">
-
-                <p>
-                    2. Google docsファイルをwordで編集
-                </p>
-
-                <label>
-                    <input type="radio"
-                    name="q2"
-                    value="0">
-
-                    できる
-                </label>
-
-                <label>
-                    <input type="radio"
-                    name="q2"
-                    value="1">
-
-                    できない
-                </label>
-
+                <p>2. Google Docsファイル形式（.gdoc）のままダウンロードしたファイルを、Wordで直接編集することは？</p>
+                <label><input type="radio" name="q2" value="0"> できる</label>
+                <label><input type="radio" name="q2" value="1"> できない</label>
             </div>
 
-            <!-- 問題3 -->
-
             <div class="question">
-
-                <p>
-                    3. 映像出力に適切なケーブルは？
-                </p>
-
-                <label>
-                    <input type="radio"
-                    name="q3"
-                    value="0">
-
-                    USB-B
-                </label>
-
-                <label>
-                    <input type="radio"
-                    name="q3"
-                    value="1">
-
-                    HDMI
-                </label>
-
+                <p>3. 映像出力に適切なケーブルは？</p>
+                <label><input type="radio" name="q3" value="0"> USB-B</label>
+                <label><input type="radio" name="q3" value="1"> HDMI</label>
             </div>
 
-            <!-- 問題4 -->
-
             <div class="question">
-
-                <p>
-                    4. 音声出力に適したケーブルは？
-                </p>
-
-                <label>
-                    <input type="radio"
-                    name="q4"
-                    value="1">
-
-                    AUX
-                </label>
-
-                <label>
-                    <input type="radio"
-                    name="q4"
-                    value="0">
-
-                    Bluetooth
-                </label>
-
+                <p>4. 音声出力に適したケーブルは？</p>
+                <label><input type="radio" name="q4" value="1"> AUX</label>
+                <label><input type="radio" name="q4" value="0"> Bluetooth (無線規格)</label>
             </div>
 
+            <button onclick="checkQuiz()">採点する</button>
 
-            <button onclick="checkQuiz()">
-
-                採点する
-
-            </button>
-
-            <div class="result"
-            id="result"></div>
+            <div class="result" id="result"></div>
 
         </div>
 
@@ -355,55 +239,33 @@ button{
 </div>
 
 <script>
-
 function checkQuiz(){
-
     let score = 0;
 
-    const questions = [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5"
-    ];
+    const questions = ["q1", "q2", "q3", "q4"];
 
     questions.forEach(q => {
-
-        const selected =
-        document.querySelector(
-        `input[name="${q}"]:checked`
-        );
-
-        if(selected &&
-        selected.value === "1"){
-
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if(selected && selected.value === "1"){
             score++;
         }
     });
 
-    const result =
-    document.getElementById("result");
+    // スコアをCookieに保存してポータル画面と連動（7日間有効）
+    const maxAge = 60 * 60 * 24 * 7; 
+    document.cookie = `lesson02_score=${score}; max-age=${maxAge}; path=/;`;
 
+    const result = document.getElementById("result");
     result.style.display = "block";
 
     if(score === 4){
-
-        result.innerHTML =
-        "🎉 4問正解！完璧です！";
-
-    }else if(score > 2){
-
-        result.innerHTML =
-        `👍 ${score}/4問正解！よく理解できています！`;
-
-    }else{
-
-        result.innerHTML =
-        `📚 ${score}/4問正解！復習してみよう！`;
+        result.innerHTML = `🎉 4問全問正解！完璧です！ (Cookieにスコアを記録しました)`;
+    } else if(score > 2){
+        result.innerHTML = `👍 ${score}/4問正解！よく理解できています！ (Cookieにスコアを記録しました)`;
+    } else {
+        result.innerHTML = `📚 ${score}/4問正解！復習してみよう！ (Cookieにスコアを記録しました)`;
     }
 }
-
 </script>
 
 </body>
