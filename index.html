@@ -1,368 +1,69 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=https://example.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページ移転のお知らせ</title>
 
-<title>生徒会ICT講習会</title>
+    <style>
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f5f7fa;
+            font-family:sans-serif;
+        }
 
-<style>
+        .box{
+            background:#fff;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,.15);
+            text-align:center;
+            max-width:500px;
+            width:90%;
+        }
 
-body{
-    margin:0;
-    font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
-    background:#f5f7fb;
-    color:#1f2937;
-}
+        h1{
+            color:#0078ff;
+            margin-bottom:15px;
+        }
 
-/* ヒーロー */
+        p{
+            color:#555;
+            font-size:18px;
+        }
 
-.hero{
-    background:
-    linear-gradient(
-        rgba(20,30,70,.82),
-        rgba(20,30,70,.9)
-    ),
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop");
+        a{
+            display:inline-block;
+            margin-top:20px;
+            background:#0078ff;
+            color:#fff;
+            text-decoration:none;
+            padding:12px 24px;
+            border-radius:8px;
+            font-weight:bold;
+        }
 
-    background-size:cover;
-    background-position:center;
-
-    color:white;
-    text-align:center;
-    padding:140px 20px;
-}
-
-.hero h1{
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.2rem;
-    opacity:.9;
-}
-
-/* コンテンツ */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 20px;
-}
-
-/* 3列 */
-
-.lesson-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-}
-
-/* カード */
-
-.lesson-card{
-    background:white;
-    border-radius:28px;
-    padding:30px;
-    text-decoration:none;
-    color:inherit;
-
-    border:1px solid #e5e7eb;
-
-    box-shadow:
-    0 4px 20px rgba(0,0,0,.05);
-
-    transition:.25s;
-    position: relative; /* バッジ位置調整用 */
-}
-
-.lesson-card:hover{
-    transform:translateY(-5px);
-
-    box-shadow:
-    0 10px 30px rgba(37,99,235,.15);
-}
-
-/* 番号 */
-
-.lesson-number{
-    width:45px;
-    height:45px;
-
-    border-radius:14px;
-
-    background:#dbeafe;
-    color:#2563eb;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-weight:bold;
-
-    margin-bottom:18px;
-}
-
-/* 点数バッジのデザイン */
-.score-badge {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    background: #10b981;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    display: none; /* デフォルトは非表示、CookieがあればJSで表示 */
-}
-
-.lesson-card h3{
-    margin-top:0;
-    font-size:1.6rem;
-    margin-bottom:14px;
-}
-
-.lesson-card p{
-    color:#6b7280;
-    line-height:1.8;
-}
-
-/* 関連サイトのコンテナ簡易調整 */
-.section-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-details {
-    background: white;
-    padding: 20px;
-    border-radius: 18px;
-    border: 1px solid #e5e7eb;
-}
-
-summary {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.content {
-    margin-top: 15px;
-    padding-left: 10px;
-}
-
-.content a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* フッター */
-
-footer{
-    margin-top:60px;
-    padding:30px 20px;
-    text-align:center;
-    color:#9ca3af;
-    font-size:.8rem;
-    border-top:1px solid #e5e7eb;
-}
-
-/* スマホ */
-
-@media(max-width:900px){
-
-    .lesson-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:600px){
-
-    .lesson-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:2.3rem;
-    }
-
-}
-
-</style>
+        a:hover{
+            background:#005fcc;
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
-
-    <h1>
-        ICT・情報モラル・生成AI
-    </h1>
-
+<div class="box">
+    <h1>ページを変更しました</h1>
     <p>
-        生徒会活動で必要な
-        デジタルスキルを学ぶ
+        新しいページへ自動的に移動します。<br>
+        移動しない場合は下のボタンを押してください。
     </p>
 
-</section>
-
-<div class="container">
-
-    <div class="lesson-grid">
-
-        <a href="lesson01.html" class="lesson-card">
-            <div class="lesson-number">01</div>
-            <div class="score-badge" id="badge-lesson01">前回の得点: <span id="score-lesson01">0</span>点</div>
-            <h3>インターネットとは</h3>
-            <p>インターネットの仕組みや、SNS等のモラルについて学習</p>
-        </a>
-
-        <a href="lesson02.html" class="lesson-card">
-            <div class="lesson-number">02</div>
-            <div class="score-badge" id="badge-lesson02">前回の得点: <span id="score-lesson02">0</span>点</div>
-            <h3>ファイル形式・ケーブルなど</h3>
-            <p>PDF/JPEGの使い分けや、プロジェクター接続（HDMI）について学ぶ</p>
-        </a>
-
-        <a href="lesson03.html" class="lesson-card">
-            <div class="lesson-number">03</div>
-            <div class="score-badge" id="badge-lesson03">前回の得点: <span id="score-lesson03">0</span>点</div>
-            <h3>クラウドの仕組み</h3>
-            <p>オンラインストレージの基礎知識の学習</p>
-        </a>
-
-        <a href="lesson04.html" class="lesson-card">
-            <div class="lesson-number">04</div>
-            <div class="score-badge" id="badge-lesson04">前回の得点: <span id="score-lesson04">0</span>点</div>
-            <h3>Google Workspaceについて</h3>
-            <p>ドライブ、ドキュメント、スライド、シート、フォームの使い方を学ぶ</p>
-        </a>
-
-        <a href="setup.html" class="lesson-card">
-            <div class="lesson-number">05</div>
-            <div class="score-badge" id="badge-lesson05">前回の得点: <span id="score-lesson05">0</span>点</div>
-            <h3>PDF (I Love PDF)</h3>
-            <p>I Love PDFを使ったPDF編集方法を学ぶ</p>
-        </a>
-
-        <a href="setup.html" class="lesson-card">
-            <div class="lesson-number">06</div>
-            <div class="score-badge" id="badge-lesson06">前回の得点: <span id="score-lesson06">0</span>点</div>
-            <h3>Canva</h3>
-            <p>ポスターやプレゼン資料のおしゃれな作り方を学ぶ</p>
-        </a>
-
-        <a href="setup.html" class="lesson-card">
-            <div class="lesson-number">07</div>
-            <div class="score-badge" id="badge-lesson07">前回の得点: <span id="score-lesson07">0</span>点</div>
-            <h3>生成AIの仕組みについて</h3>
-            <p>AIの原理・注意事項を学習する</p>
-        </a>
-
-        <a href="setup.html" class="lesson-card">
-            <div class="lesson-number">08</div>
-            <div class="score-badge" id="badge-lesson08">前回の得点: <span id="score-lesson08">0</span>点</div>
-            <h3>生成AIを利活用する</h3>
-            <p>生成AIを実際に使用する</p>
-        </a>
-
-        <a href="setup.html" class="lesson-card">
-            <div class="lesson-number">09</div>
-            <div class="score-badge" id="badge-final_exam">前回の得点: <span id="score-final_exam">0</span>点</div>
-            <h3>最終確認テスト</h3>
-            <p>
-                全ての章の内容を理解できたか、最後に振り返りましょう！確認テストで<strong>40点</strong>以上を目指しましょう。(点数に達するまで何度でも可能)
-            </p>
-        </a>
-
-    </div>
-
+    <a href="https://lafa.weblike.jp/googleworkspace">新しいページへ</a>
 </div>
-
-<div class="section-container">
-    <details>
-        <summary>　 関連サイト&amp;添付ファイルについて</summary>
-        <div class="content">
-            <a href="https://drive.google.com/drive/my-drive"> 🔗 Google drive</a>
-            <p></p>
-            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 PowerPoint資料</a>
-            <p></p>
-            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 講義ノート</a>
-            <p></p>
-            <a href="https://support.google.com/?hl=ja"> 🔗 Googleサポート</a>
-            <p></p>
-            <a href="https://www.nii.ac.jp/"> 🔗 国立情報学研究所</a>
-            <p></p>
-            <a href="https://haruki1914.github.io/school-googleworkspace/setup.html"> 🔗 印刷物</a>
-            <p></p>
-        </div>
-    </details>
-</div>
-
-<footer>
-    Copyright © Haruki All Rights Reserved.<br>
-    本Webサイトに関する著作権は作成者に帰属します。<br>
-    無断転載・複製を禁止します。
-</footer>
-
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    
-    // Cookieの値を取得する共通関数
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
-    }
-
-    // --- 各レッスンのスコア自動反映処理 ---
-    // ループ処理を使って Lesson 01 〜 Lesson 08 までを一括でチェック・反映します
-    for (let i = 1; i <= 8; i++) {
-        const lessonStr = String(i).padStart(2, '0'); // 例: "01", "02" ...
-        const score = getCookie(`lesson${lessonStr}_score`); // Cookie名: lesson01_score などを探す
-        
-        if (score !== null) {
-            const badge = document.getElementById(`badge-lesson${lessonStr}`);
-            const scoreSpan = document.getElementById(`score-lesson${lessonStr}`);
-            if (badge && scoreSpan) {
-                scoreSpan.innerText = score;
-                badge.style.display = 'block';
-            }
-        }
-    }
-
-    // --- 【Lesson09 最終確認テスト】 の自動判定＆合格判定連動 ---
-    const finalExamScore = getCookie('final_exam_score');
-    if (finalExamScore !== null) {
-        const badge = document.getElementById('badge-final_exam');
-        const scoreSpan = document.getElementById('score-final_exam');
-        
-        if (badge && scoreSpan) {
-            scoreSpan.innerText = finalExamScore;
-            
-            const scoreNum = parseInt(finalExamScore, 10);
-            if (scoreNum >= 40) {
-                badge.innerHTML = `合格 🎉 (${scoreNum}点)`;
-                badge.style.background = '#10b981'; // 緑色
-            } else {
-                badge.innerHTML = `要再挑戦 📚 (${scoreNum}点)`;
-                badge.style.background = '#f59e0b'; // オレンジ色
-            }
-            
-            badge.style.display = 'block';
-        }
-    }
-});
-</script>
 
 </body>
 </html>
